@@ -18,7 +18,7 @@ function Feed() {
   const [posts, setPosts] = useState([]);
 
   useEffect( () => {
-    db.collection('posts').onSnapshot((snapshot) => (
+    db.collection('posts').orderBy("timestamp", "desc").onSnapshot((snapshot) => (
       setPosts(snapshot.docs.map( (doc) => (
         { 
           id: doc.id,
@@ -53,7 +53,7 @@ function Feed() {
                  <input value={input} onChange={(e) => setInput(e.target.value)} type="text" />
                  <button onClick={sendPost} type="submit" className="">Send</button>
              </form>
-         </div>
+           </div>
 
          <div className="feed__inputOptions">
             <InputOption title='Photo' Icon={ImageIcon} color='#70B5F9' />
