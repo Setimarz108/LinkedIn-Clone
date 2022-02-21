@@ -1,26 +1,22 @@
+.feed__inputOptions {
+  display: flex;
+  justify-content: space-evenly;
+}
 
-.feed__inputOptions{
+.inputOption {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  color: gray;
+  padding: 10px;
+  cursor: pointer;
+}
 
-    display: flex;
-    justify-content: space-evenly;
-    }
+.inputOption:hover {
+  background-color: whitesmoke;
+  border-radius: 10px;
+}
 
-  .inputOption{
-      display: flex;
-      align-items: center;
-      margin-top: 15px;
-      color:gray;
-      padding: 10px;
-      cursor: pointer; 
-
-  }  
-
-  .inputOption:hover{
-      background-color:whitesmoke;
-      border-radius: 10px;
-  }
-
-  .inputOption > h4 {
-
-    margin-left: 5px;
-  }
+.inputOption > h4 {
+  margin-left: 5px;
+}
