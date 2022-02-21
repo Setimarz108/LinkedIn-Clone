@@ -1,7 +1,11 @@
 import "./Sidebar.css";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import { useSelector } from "react-redux";
+import { selectUser } from "../features/userSlice";
 
 export default function Sidebar() {
+
+  const user = useSelector(selectUser)
 
     const recentItem = (topic) => {
        return  <div className="sidebar__recentItem">
@@ -17,9 +21,11 @@ export default function Sidebar() {
           src="https://images.unsplash.com/photo-1597773150796-e5c14ebecbf5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YWJzdHJhY3QlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
           alt=""
         />
-        <AccountCircleIcon className="sidebar_avatar" />
-        <h2> Sebastian Marquez</h2>
-        <h4>myemail.108@gmail.com</h4>
+        <AccountCircleIcon src={user.photoUrl} className="sidebar_avatar" >
+          {user.photoUrl}
+        </AccountCircleIcon>
+        <h2> {user.displayName}</h2>
+        <h4>{user.email}</h4>
       </div>
 
       <div className="sidebar__stats">

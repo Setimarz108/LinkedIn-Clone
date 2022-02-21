@@ -40,6 +40,10 @@
 
 }
 
+.feed__input > form > input:focus{
+    outline: none;
+}
+
 .feed__input > form > button {
     display: none;
 }
